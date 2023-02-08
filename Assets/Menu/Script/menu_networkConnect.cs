@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Mirror;
 
-public class menu_networkConnectItem : MonoBehaviour
+public class menu_networkConnect : MonoBehaviour
 {
+    public GameObject Player;
     public NetworkManager networkManager;
     private InputField InputIP;
     private void Start()
     {
-        GetComponent<InputField>();
+        InputIP = GetComponent<InputField>();
     }
 
     public void Connect()
     {
-        networkManager.networkAddress = InputIP.text;
         if (!NetworkClient.isConnected && !NetworkServer.active)
         {
+            networkManager.networkAddress = InputIP.text;//"192.168.1.135";
             networkManager.StartClient();
+            SceneManager.LoadScene("GameScane");
         }
     }
 
@@ -27,6 +30,7 @@ public class menu_networkConnectItem : MonoBehaviour
         if (!NetworkClient.isConnected && !NetworkServer.active)
         {
             networkManager.StartHost();
+            SceneManager.LoadScene("GameScane");
         }
     }
 }

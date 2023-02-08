@@ -970,6 +970,7 @@ GameObject:
   - component: {fileID: 1745029066}
   - component: {fileID: 1745029068}
   - component: {fileID: 1745029067}
+  - component: {fileID: 1745029069}
   m_Layer: 0
   m_Name: Network
   m_TagString: Untagged
@@ -1049,3 +1050,16 @@ MonoBehaviour:
   playerSpawnMethod: 0
   spawnPrefabs: []
   timeInterpolationGui: 0
+--- !u!114 &1745029069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745029065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcdff942babd2240bacae67825a6a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 9117410217057632284, guid: 9e20b6bca1f81f444b895d010bbd987d, type: 3}
