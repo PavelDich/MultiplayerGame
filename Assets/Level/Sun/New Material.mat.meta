@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Level/Sun/New Material.mat.meta
 guid: 4bdd4a757925ab642a3528a8a1a085e7
+========
+guid: 599cefacd9be4e4468a2c106e4217a1f
+>>>>>>>> Levels:Assets/Level/models/textures/chair_1/Materials/plastic_texture_2k.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

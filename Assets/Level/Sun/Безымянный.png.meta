@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Level/Sun/Безымянный.png.meta
 guid: 8e398043a86bd6d4fa1c92b74949f473
+========
+guid: 74943929e24a2254aa04523a6dc40990
+>>>>>>>> Levels:Assets/Level/models/chair_red/chair_red_l0.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

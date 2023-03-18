@@ -7,9 +7,18 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+<<<<<<< HEAD
 	"last_search.DE949528" = "h: "
 	"OpenInspectorPreview.DE949528" = "0"
 	"currentGroup.DE949528" = "scene"
+=======
+	"last_search.DD5CDD96" = ""
+	"OpenInspectorPreview.DD5CDD96" = "0"
+	"currentGroup.DD5CDD96" = "scene"
+	"last_search.DA949528" = ""
+	"OpenInspectorPreview.DA949528" = "0"
+	"currentGroup.DA949528" = "all"
+>>>>>>> Levels
 }
 providers = {
 	adb = {
@@ -60,8 +69,14 @@ recentSearches = [
 searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
+<<<<<<< HEAD
 showSavedSearchPanel = true
 expandedQueries = [-1765347274 961552606]
+=======
+showSavedSearchPanel = false
+expandedQueries = [
+]
+>>>>>>> Levels
 queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"

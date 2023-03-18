@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/Metal_scratched_009/Metal_scratched_009_height.png.meta
 guid: 35f03c3075b096d4c8e2cdfbbfca0ff7
+========
+guid: 7f108e9e5d8df3b4eb1f6fce69897142
+>>>>>>>> Levels:Assets/Level/models/chair_green/chair_green_l0.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

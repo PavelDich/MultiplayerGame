@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/Metal_scratched_009/Metal_scratched_009_ambientOcclusion.jpg.meta
 guid: cbff32af4bd854e42b934ca2fcf25247
+========
+guid: 2efbda23d99a0bc4c8ef25b61536a6cc
+>>>>>>>> Levels:Assets/Level/models/chair_red/chair_red_l1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

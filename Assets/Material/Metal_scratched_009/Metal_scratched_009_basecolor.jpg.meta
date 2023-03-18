@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Material/Metal_scratched_009/Metal_scratched_009_basecolor.jpg.meta
 guid: 356229d00d9cce3408a17ab8f77fad3a
+========
+guid: ea2396b3afdac2f49ba4ac8e7296c502
+>>>>>>>> Levels:Assets/Level/models/chair_red/chair_red_l2.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
