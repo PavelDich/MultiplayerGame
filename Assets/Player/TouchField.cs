@@ -1,43 +1,48 @@
-// SrtumDev
-// YouTube https://www.youtube.com/channel/UCsAcfm0AVVZwLiJ3D451R3g/featured
-// Discord https://discord.gg/GtzqG7pgNJ
-// GitHub https://github.com/StrumDev
-
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class TouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    
-    public Vector2 TouchAxis { get; private set; }
-
-    private Vector2 pointer;
-    private int pointerId;
-    private bool inputTouch;
-
-    private void Update()
+    [HideInInspector]
+    public Vector2 TouchDist;
+    [HideInInspector]
+    public Vector2 PointerOld;
+    [HideInInspector]
+    protected int PointerId;
+    [HideInInspector]
+    public bool Pressed;
+    void Update()
     {
-        if (inputTouch)
-        {   
-            if (pointerId >= 0 && pointerId < Input.touches.Length)
+        if (Pressed)
+        {
+            if (PointerId >= 0 && PointerId < Input.touches.Length)
             {
-                TouchAxis = Input.touches[pointerId].position - pointer;
-                pointer = Input.touches[pointerId].position;
-                return;
+                TouchDist = Input.touches[PointerId].position - PointerOld;
+                PointerOld = Input.touches[PointerId].position;
             }
-
-            TouchAxis = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - pointer;
-            pointer = Input.mousePosition;
+            else
+            {
+                TouchDist = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - PointerOld;
+                PointerOld = Input.mousePosition;
+            }
         }
-        else TouchAxis = new Vector2();
+        else
+        {
+            TouchDist = new Vector2();
+        }
     }
 
-    public void OnPointerDown(PointerEventData e)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        inputTouch = true;
-        pointer = e.position;
-        pointerId = e.pointerId;
+        Pressed = true;
+        PointerId = eventData.pointerId;
+        PointerOld = eventData.position;
+    }
+
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Pressed = false;
     }
     
-    public void OnPointerUp(PointerEventData eventData) => inputTouch = false;
 }

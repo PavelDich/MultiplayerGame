@@ -10,13 +10,12 @@ using TMPro;
 
 public class menu_networkConnect : MonoBehaviour
 {
-    public NetworkManager networkManager;
-    private InputField InputIP;
+    public network_Manager network_Manager;
+    public TMP_InputField InputIP;
     public TMP_Text IPAdress;
     private void Start()
     {
-        InputIP = GetComponent<InputField>();
-        networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+        network_Manager = GameObject.Find("NetworkManager").GetComponent<network_Manager>();
         if(InputIP != null)
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
@@ -28,15 +27,13 @@ public class menu_networkConnect : MonoBehaviour
                  }
              }
         }
-        
     }
-
     public void Connect(int SceneName)
     {
         if (!NetworkClient.isConnected && !NetworkServer.active)
         {
-            networkManager.networkAddress = InputIP.text;//"192.168.1.135";
-            networkManager.StartClient();
+            network_Manager.networkAddress = InputIP.text;//"192.168.1.135";
+            network_Manager.StartClient();
             SceneManager.LoadScene(SceneName);
         }
     }
@@ -45,7 +42,7 @@ public class menu_networkConnect : MonoBehaviour
     {
         if (!NetworkClient.isConnected && !NetworkServer.active)
         {
-            networkManager.StartHost();
+            network_Manager.StartHost();
             SceneManager.LoadScene(SceneName);
         }
     }
@@ -54,5 +51,10 @@ public class menu_networkConnect : MonoBehaviour
     {
         SceneManager.LoadScene(SceneName);
         //networkManager.playerPrefab = Instantiate(Player);
+    }
+
+    public void exit(int SceneName)
+    {
+        SceneManager.LoadScene(SceneName);
     }
 }
