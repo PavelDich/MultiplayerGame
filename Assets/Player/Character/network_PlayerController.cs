@@ -8,11 +8,14 @@ public class network_PlayerController : NetworkBehaviour
     [SerializeField] private float speedBody;
     [SerializeField] private Joystick ControllerBody;
     [SerializeField] private Transform Head;
+    [SerializeField] private Transform Camera;
     [SerializeField] private Animator AnimatiorMenu;
+    public bool itsMe;
 
     private void Start()
     {
-        if(!isOwned) Head.gameObject.SetActive(false);
+        itsMe = isOwned;
+        if(!isOwned) Camera.gameObject.SetActive(false);
         if(setting_Save.ControllerId == 0) ControllerBody.gameObject.SetActive(false);
     }
     private void FixedUpdate()
@@ -41,5 +44,10 @@ public class network_PlayerController : NetworkBehaviour
         {
             //AnimatiorMenu
         }
+    }
+
+    public void Death()
+    {
+        Debug.Log("deach");
     }
 }

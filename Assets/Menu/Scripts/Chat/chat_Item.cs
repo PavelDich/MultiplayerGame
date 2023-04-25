@@ -10,6 +10,7 @@ public class chat_Item : MonoBehaviour
     [SerializeField]private TMP_Text UiMassage;
     void Start()
     {
+        Debug.Log("заспавнено");
         UiMassage.text = Massage;
     }
 }

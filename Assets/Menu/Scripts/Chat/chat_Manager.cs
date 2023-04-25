@@ -3,24 +3,20 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 using TMPro;
+using System;
 
-public class chat_Manager : NetworkBehaviour
-{
-    [SerializeField] private TMP_Text chatText = null;
+public class chat_Manager : NetworkBehaviour{
     [SerializeField] private TMP_InputField inputField = null;
-    [SerializeField] private GameObject MassagePrefab;
-    [SerializeField] private Transform Content;
+    [SerializeField] private TMP_Text AllMassage = null;
+    [SerializeField] private GameObject canvas = null;
 
-    public void SetMassageText()
+    public void HandleMessage()
     {
-        if(!Input.GetKeyDown(KeyCode.Return)) { return; }
-        SpawnMassage(inputField.text);
     }
 
-    [ClientRpc]
-    public void SpawnMassage(string massage)
+    public void SendMessageToServer(string message)
     {
-        MassagePrefab.GetComponent<chat_Item>().Massage = massage;
-        network_Manager.Instantiate(MassagePrefab, Content.position, Quaternion.identity);
+        AllMassage.text += message + "\n";
+        inputField.text = string.Empty;
     }
 }
