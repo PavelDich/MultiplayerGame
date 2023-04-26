@@ -24,9 +24,9 @@ public class setting_Set : MonoBehaviour
 #endregion 
 
 #region Выгрузка данных
-    private void Start()
+    public void Start()
     {
-        if(PlayerPrefs.HasKey("NickName"))
+        if(PlayerPrefs.HasKey("NickName") && NickName != null)
         {
             setting_Save.NickName = PlayerPrefs.GetString("NickName");
             NickName.placeholder.GetComponent<TMP_Text>().text = PlayerPrefs.GetString("NickName");

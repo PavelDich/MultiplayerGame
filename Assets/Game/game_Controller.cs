@@ -5,6 +5,9 @@ using Mirror;
 
 public class game_Controller : MonoBehaviour
 {
+    public static Dictionary<int, NetworkConnectionToServer> connections =
+        new Dictionary<int, NetworkConnectionToServer>();
+    public string[] NickName;
     public GameObject Camera;
     public GameObject NetworkManager;
     network_Manager network_Manager;
