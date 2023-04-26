@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/HabrUnityMirror/Prefabs.meta
 guid: bc7faf749f79f1d45b987a01a7f68cd0
+========
+guid: e5adac1ccabd9da42a295120359755a1
+>>>>>>>> Models:Assets/Level/models.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

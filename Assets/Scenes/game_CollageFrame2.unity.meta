@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/game_CollageFrame2.unity.meta
 guid: 567fcff90729dea4ea4fb43e930ca676
+========
+guid: 64e2c91dce0960b439120cf9391320db
+>>>>>>>> Models:Assets/Level/models/player_male/garry.glb.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

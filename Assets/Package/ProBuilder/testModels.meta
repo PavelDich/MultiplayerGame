@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Package/ProBuilder/testModels.meta
 guid: 6cb0d52853f21fd4fb7825e7c8fda119
+========
+guid: 7010b6d7d90a8c0438e4592ce5598945
+>>>>>>>> Models:Assets/Level/models/Chair_yellow.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
