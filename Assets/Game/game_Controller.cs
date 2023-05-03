@@ -5,14 +5,11 @@ using Mirror;
 
 public class game_Controller : MonoBehaviour
 {
-    public static Dictionary<int, NetworkConnectionToServer> connections =
-        new Dictionary<int, NetworkConnectionToServer>();
-    public string[] NickName;
+    network_Manager network_Manager;
     public GameObject Camera;
     public GameObject NetworkManager;
-    network_Manager network_Manager;
-    //[SyncVar]
-    public bool isGameStarted = false;
+
+
 
     public void Start()
     {
@@ -20,7 +17,6 @@ public class game_Controller : MonoBehaviour
     }
     public void SpawnPlayer()
     {
-        if(isGameStarted) return;
         Destroy(Camera);
         network_Manager.ActivatePlayerSpawn();
     }

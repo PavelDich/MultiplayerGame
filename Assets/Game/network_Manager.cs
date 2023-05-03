@@ -1,12 +1,10 @@
 ﻿using Mirror;
 using UnityEngine;
-
-
+using UnityEngine.SceneManagement;
 
 public class network_Manager : NetworkManager {
     private bool player_Spawned;
     private bool player_Connected;
-
 
 
     public override void OnStartServer() 
