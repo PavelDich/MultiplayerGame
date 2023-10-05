@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 4d66fb7743bfe024aa23a61c3e70ba23
+<<<<<<<< HEAD:Assets/Game/models/blend_files/models/blend_files/bush.blend.meta
+guid: 34de00fc324307e4486d58c3a19ee2ba
+========
+guid: bf3aa89a2f29b5447b5ac86807b06407
+>>>>>>>> Models:Assets/Game/models/blend_files/chair_green.blend.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

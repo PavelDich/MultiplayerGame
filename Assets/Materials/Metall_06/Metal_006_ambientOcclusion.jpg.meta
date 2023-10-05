@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: cdf6c025712764041aa3c3c035247f41
+<<<<<<<< HEAD:Assets/Materials/Metall_06/Metal_006_ambientOcclusion.jpg.meta
+guid: d0bc6fe80194606429364e79c04b76ea
+========
+guid: 0d09e617fd4dbcb4c83bd40fbbfef1e6
+>>>>>>>> Models:Assets/Game/models/FBX/деревянный стол/Деревянный_стол_tex.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

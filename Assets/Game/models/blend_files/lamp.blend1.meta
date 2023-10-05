@@ -1,5 +1,13 @@
 fileFormatVersion: 2
-guid: df86a72f0f92bb04f982366f89faf997
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Game/models/blend_files/lamp.blend1.meta
+guid: 08f2ad74bac62e54aadcb2afad9baa29
+========
+guid: a3547f1d72f16e641b4a1250c8cca3b6
+>>>>>>>> Models:Assets/Game/models/blend_files/01(test).blend1.meta
+=======
+guid: c8f9c1f1cf1c75946822e997991122f2
+>>>>>>> Models
 DefaultImporter:
   externalObjects: {}
   userData: 

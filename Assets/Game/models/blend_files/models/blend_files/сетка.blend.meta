@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 29e015cd82d55834b99d41efe06f41a2
+<<<<<<<< HEAD:Assets/Game/models/blend_files/models/blend_files/сетка.blend.meta
+guid: da229c4a9afbc1d40aa8bd3082d6497e
+========
+guid: a663c9de24669a346a7fe53adec66159
+>>>>>>>> Models:Assets/Game/models/blend_files/chair_red.blend.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

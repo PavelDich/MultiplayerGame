@@ -41,4 +41,21 @@ public class player_Host : NetworkBehaviour
         _isHost = newValue;
     }
 #endregion
+
+#region Дипломы
+    [SyncVar(hook = nameof(SyncDiploms))] 
+    public int _Diploms;
+    public int Diploms = 5;
+    private void SyncDiploms(int oldValue, int newValue)
+    {
+        Diploms = newValue;
+    }
+
+    [Server]
+    public void ChangeDiploms(int newValue)
+    {
+        _Diploms = newValue;
+    }
+#endregion
+
 }

@@ -1,5 +1,17 @@
 fileFormatVersion: 2
-guid: ceba4a4b0266c544fa1d310f24ec4697
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Game/models/blend_files/Pc screen.blend.meta
+guid: 897e541b7a86640478b4f02c6655b228
+========
+guid: 715325211ccfa474fb867a919c8a690a
+>>>>>>>> Models:Assets/Game/models/blend_files/01(test).blend.meta
+=======
+<<<<<<<< HEAD:Assets/Game/models/blend_files/window.blend.meta
+guid: 10dbaa65749d8e9429091dd244d77be6
+========
+guid: c66d250f9b521774d96ab9f0e65efe45
+>>>>>>>> Models:Assets/Game/models/blend_files/Pc screen.blend.meta
+>>>>>>> Models
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

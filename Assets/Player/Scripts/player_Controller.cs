@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
 using Mirror;
 using System.Net;
@@ -10,9 +11,18 @@ public class player_Controller : NetworkBehaviour
 {
     public network_Manager network_Manager;
     public game_Controller game_Controller;
+    public Rigidbody _Rigidbody;
     public GameObject[] Players;
+    public GameObject Survivel;
+    public GameObject Security;
     public player_Host player_Host;
     public TMP_Text IPAdress;
+
+    [SyncVar(hook = nameof(SyncIsSecurity))] 
+    public bool _IsSecurity;
+    public bool IsSecurity = false;
+
+    public bool IsMe = false;
 
     [SerializeField] private TMP_Text playerNickName;
     [SyncVar(hook = nameof(SyncNickName))] 
@@ -26,6 +36,9 @@ public class player_Controller : NetworkBehaviour
     private bool ControllerActive = true;
     [SerializeField] private float speedBody;
     [SerializeField] private Joystick ControllerBody;
+    [SerializeField] private Animator AnimatiorWalk;
+    private float BodyPositionX;
+    private float BodyPositionZ;
 
     [SerializeField] private GameObject Camera;
     [SerializeField] private MouseLook MouseLook;
@@ -39,6 +52,7 @@ public class player_Controller : NetworkBehaviour
 
     private void Start()
     {
+        IsMe = isOwned;
             network_Manager = GameObject.Find("NetworkManager").GetComponent<network_Manager>();
             game_Controller = GameObject.Find("gameController").GetComponent<game_Controller>();
             Players = GameObject.FindGameObjectsWithTag("Player");
@@ -68,30 +82,68 @@ public class player_Controller : NetworkBehaviour
                 player_Host = Players[i].GetComponent<player_Host>();
             }
         } 
+
     }
     public override void OnStartAuthority()
     {
         OnMessage += HandleNewMessage;
     }
-    private void FixedUpdate()
+
+    public void RestartGame()
     {
+        Security.SetActive(false);
+        Survivel.SetActive(true);
+        player_Host.ChangeGameStarted(false);
+    }
+    public void StartGame()
+    {
+        if(player_Host.GameStarted == false){
+        player_Host.GameStarted = true;
+        player_Host.ChangeGameStarted(true);
+        if(isServer) Players[Random.Range(0, Players.Length)].GetComponent<player_Controller>().ChangeIsSecurity(true);
+        }
+    }
+    private void FixedUpdate()
+    {/*
+        if(IsSecurity = true && player_Host.GameStarted == true) {
+        Security.SetActive(true);
+        Survivel.SetActive(false);
+        }
+
+        if(IsSecurity = false && player_Host.GameStarted == true) {
+        Security.SetActive(false);
+        Survivel.SetActive(true);
+        }
+        */
+
         
         if (isOwned) 
         {
+            
         #region Управление телом
-            //Управление для ПК (WASD)
             if(setting_Save.ControllerId == 0 && ControllerActive)
             {
-                float BodyPositionX = Input.GetAxis("Horizontal") * speedBody * Time.deltaTime;
-                float BodyPositionZ = Input.GetAxis("Vertical") * speedBody * Time.deltaTime;
-                transform.Translate(BodyPositionX, 0f, BodyPositionZ);
+                //Управление для ПК (WASD)
+
+                //BodyPositionX = Input.GetAxis("Horizontal") * speedBody * Time.deltaTime;
+                //BodyPositionZ = Input.GetAxis("Vertical") * speedBody * Time.deltaTime;
+                //transform.Translate(BodyPositionX, 0f, BodyPositionZ);
+
+                Vector3 moveDirection = transform.TransformDirection(new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")));
+                moveDirection.y = 0f;
+                _Rigidbody.velocity = moveDirection * speedBody + new Vector3(0f, _Rigidbody.velocity.y, 0f);
             }
-            //Управление для телефона (Джостик)
             else if(setting_Save.ControllerId == 1 && ControllerActive)
             {
-                float BodyPositionX = ControllerBody.Horizontal * speedBody * Time.deltaTime;
-                float BodyPositionZ = ControllerBody.Vertical * speedBody * Time.deltaTime;
-                transform.Translate(BodyPositionX, 0f, BodyPositionZ);
+                //Управление для телефона (Джостик)
+
+                //BodyPositionX = ControllerBody.Horizontal * speedBody * Time.deltaTime;
+                //BodyPositionZ = ControllerBody.Vertical * speedBody * Time.deltaTime;
+                //transform.Translate(BodyPositionX, 0f, BodyPositionZ);
+
+                Vector3 moveDirection = transform.TransformDirection(new Vector3(ControllerBody.Horizontal, 0f, ControllerBody.Vertical));
+                moveDirection.y = 0f;
+                _Rigidbody.velocity = moveDirection * speedBody + new Vector3(0f, _Rigidbody.velocity.y, 0f);
             }
         #endregion
 
@@ -101,13 +153,13 @@ public class player_Controller : NetworkBehaviour
             {
                 OpenGameMenu();
             }
+        }
 
-            if(Input.GetKeyDown(KeyCode.C))
-            {
-                if(isServer){
-                    player_Host.ChangeGameStarted(player_Host.GameStarted = !player_Host.GameStarted);
-                }
-            }
+        
+        if(BodyPositionZ > 0f || BodyPositionX > 0f || BodyPositionZ < 0f || BodyPositionX < 0f){
+                    AnimatiorWalk.SetBool("IsRanning", true);
+        }else{
+                    AnimatiorWalk.SetBool("IsRanning", false);
         }
     }
 
@@ -133,7 +185,26 @@ public class player_Controller : NetworkBehaviour
         if(setting_Save.ControllerId == 1) Controllers.SetActive(ControllerActive);
     }
 
+#region Охранник
+    void SyncIsSecurity(bool oldValue, bool newValue)
+    {
+        IsSecurity = newValue;
+        Security.SetActive(IsSecurity);
+        Survivel.SetActive(!IsSecurity);
+    }
 
+    [Server]
+    public void ChangeIsSecurity(bool newValue)
+    {
+        _IsSecurity = newValue;
+    }
+
+    [Command]
+    public void CmdIsSecurity(bool newValue)
+    {
+        ChangeIsSecurity(newValue);
+    }
+#endregion
 
 #region Имя игрока
     void SyncNickName(string oldValue, string newValue)

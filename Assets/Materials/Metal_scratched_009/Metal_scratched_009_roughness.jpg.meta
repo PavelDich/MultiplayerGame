@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: e9843f4a96cd3e04dbd46dfade08b954
+<<<<<<<< HEAD:Assets/Materials/Metal_scratched_009/Metal_scratched_009_roughness.jpg.meta
+guid: f17870d5895ff644aac3f6bc629f2ead
+========
+guid: 09d9251b95b0eff4984558b8dac4e012
+>>>>>>>> Models:Assets/Game/models/FBX/дверь/дверь_tex.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

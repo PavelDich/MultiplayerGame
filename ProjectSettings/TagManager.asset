@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Manager
+  - ClaimObj
   layers:
   - Default
   - TransparentFX
@@ -12,9 +13,9 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Hand
+  - Door
+  - ClaimObj
   - 
   - 
   - 

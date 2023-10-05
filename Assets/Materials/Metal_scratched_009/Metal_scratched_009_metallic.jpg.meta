@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: b1758d7d43e6ee341a261f5ae293dd51
+<<<<<<<< HEAD:Assets/Materials/Metal_scratched_009/Metal_scratched_009_metallic.jpg.meta
+guid: 07a325263d4aec041be8230949731f4a
+========
+guid: 8e110f56121a5c2438ec786bedb976b0
+>>>>>>>> Models:Assets/Game/models/FBX/male/male_tex.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

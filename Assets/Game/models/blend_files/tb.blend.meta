@@ -1,5 +1,13 @@
 fileFormatVersion: 2
-guid: 2153e84bd19509a489354a49ffd36dfb
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Game/models/blend_files/tb.blend.meta
+guid: 809794148e7dd1743ba23cbf962f18c2
+========
+guid: 45e74ac6d76de004583b46907c70d698
+>>>>>>>> Models:Assets/Game/models/FBX/черный пк/PC.fbx.meta
+=======
+guid: c183458fcd9c7dd4ea622f2b69f4cddd
+>>>>>>> Models
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

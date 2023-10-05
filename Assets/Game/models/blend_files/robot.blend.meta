@@ -1,5 +1,13 @@
 fileFormatVersion: 2
-guid: bfe102a36364b3c4ba8439c2b48547db
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Game/models/blend_files/robot.blend.meta
+guid: bd6e3f0ef1bdb7d44adde6a628ebf5b2
+========
+guid: eeab17fb4ffdddb4eaaccb703869d900
+>>>>>>>> Models:Assets/Game/models/FBX/стол/стол.fbx.meta
+=======
+guid: 4fbf5f20a2d039c45a7a3be2e545852a
+>>>>>>> Models
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
